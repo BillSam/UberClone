@@ -1,0 +1,12 @@
+{
+  "dev": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "ig-clone-test"
+  },
+  "uberclone": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "default"
+  }
+}

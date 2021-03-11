@@ -1,0 +1,98 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-uberclone-uberclone-223432-authRole",
+      "UnauthRoleArn": "arn:aws:iam::620459890134:role/amplify-uberclone-uberclone-223432-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::620459890134:role/amplify-uberclone-uberclone-223432-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-uberclone-uberclone-223432-deployment",
+      "UnauthRoleName": "amplify-uberclone-uberclone-223432-unauthRole",
+      "StackName": "amplify-uberclone-uberclone-223432",
+      "StackId": "arn:aws:cloudformation:us-east-1:620459890134:stack/amplify-uberclone-uberclone-223432/a79120b0-81d7-11eb-9cdc-0a4ced5e22b5",
+      "AmplifyAppId": "d2rz4y8fuzl8o8"
+    }
+  },
+  "function": {
+    "uberclone140983fe140983fePostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:620459890134:function:uberclone140983fe140983fePostConfirmation-uberclone",
+        "Name": "uberclone140983fe140983fePostConfirmation-uberclone",
+        "LambdaExecutionRole": "uberclone140983fe140983fePostConfirmation-uberclone"
+      },
+      "lastPushTimeStamp": "2021-03-11T12:19:27.682Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-uberclone-uberclone-223432-deployment/amplify-cfn-templates/function/uberclone140983fe140983fePostConfirmation-cloudformation-template.json",
+        "logicalId": "functionuberclone140983fe140983fePostConfirmation"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-uberclone-uberclone-223432-deployment",
+        "s3Key": "amplify-builds/uberclone140983fe140983fePostConfirmation-5734587a2f3833356339-build.zip"
+      },
+      "lastBuildTimeStamp": "2021-03-10T20:08:58.213Z",
+      "lastPackageTimeStamp": "2021-03-10T20:08:58.477Z",
+      "distZipFilename": "uberclone140983fe140983fePostConfirmation-5734587a2f3833356339-build.zip",
+      "lastPushDirHash": "4sI0xPlJLfxn5pKe+cUhUNKxo1M="
+    }
+  },
+  "auth": {
+    "uberclone140983fe140983fe": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "uberclone140983fe140983fePostConfirmation",
+          "triggerProvider": "Cognito",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ],
+      "output": {
+        "AppClientSecret": "1mt6uf313bbur6uk8ptul9tbf5c0hgktb3gnrf7533qaaraeeumc",
+        "UserPoolId": "us-east-1_61LseoVyT",
+        "AppClientIDWeb": "6r5n0fg0d9gb93rdcoqih3ig9n",
+        "AppClientID": "59r4tlhp9gp2nu1qhva7fv3fem",
+        "IdentityPoolId": "us-east-1:84cbb12b-2331-49a6-8e43-57c86531dfa9",
+        "IdentityPoolName": "uberclone140983fe_identitypool_140983fe__uberclone",
+        "UserPoolName": "uberclone140983fe_userpool_140983fe"
+      },
+      "lastPushTimeStamp": "2021-03-11T12:19:27.694Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-uberclone-uberclone-223432-deployment/amplify-cfn-templates/auth/uberclone140983fe140983fe-cloudformation-template.yml",
+        "logicalId": "authuberclone140983fe140983fe"
+      },
+      "customAuth": false,
+      "lastPushDirHash": "vOdTU6KDEUlcpW7ksKzZaNNvPfg="
+    }
+  },
+  "api": {
+    "uberclone": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authuberclone140983fe140983fe"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "x5rxfoyaljgkvnm2nesegge4ua",
+        "GraphQLAPIEndpointOutput": "https://b3qm6bjtznar5b2jvokm7g7tbm.appsync-api.us-east-1.amazonaws.com/graphql"
+      },
+      "lastPushTimeStamp": "2021-03-11T12:19:27.689Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-uberclone-uberclone-223432-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiuberclone"
+      }
+    }
+  }
+}
